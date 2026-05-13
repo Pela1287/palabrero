@@ -4,13 +4,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { amount, lives } = req.body;
+  const { lives } = req.body;
 
-  // Validar paquetes permitidos
+  // Validar paquetes permitidos (precios en USD para Mercado Pago)
   const PACKS = {
-    1:  { price: 500,   title: '1 vida extra — Palabrero' },
-    5:  { price: 1500,  title: '5 vidas — Palabrero' },
-    15: { price: 2500,  title: '15 vidas — Palabrero' },
+    1:  { price: 0.99,  title: '1 vida extra — Palabrero' },
+    5:  { price: 2.99,  title: '5 vidas — Palabrero' },
+    15: { price: 5.99,  title: '15 vidas — Palabrero' },
   };
 
   const pack = PACKS[lives];
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
           {
             title: pack.title,
             quantity: 1,
-            currency_id: 'ARS',
+            currency_id: 'USD',
             unit_price: pack.price,
           }
         ],
