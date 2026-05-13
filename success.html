@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago exitoso — Palabrero</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a0f;
+    color: #f0f0f5;
+    font-family: sans-serif;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .icon { font-size: 64px; }
+  h1 { font-size: 24px; font-weight: 700; color: #c8ff57; }
+  p { font-size: 15px; color: #8888aa; line-height: 1.5; }
+  .btn {
+    margin-top: 16px;
+    padding: 16px 32px;
+    background: #c8ff57;
+    color: #0a0a0f;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div class="icon">🎉</div>
+<h1>¡Pago exitoso!</h1>
+<p id="msg">Tus vidas fueron agregadas.<br>¡Seguí jugando!</p>
+<a class="btn" href="/">Volver al juego</a>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const lives = parseInt(params.get('lives') || '0');
+  if (lives > 0) {
+    const cur = parseInt(localStorage.getItem('palabrero_lives') || '0');
+    localStorage.setItem('palabrero_lives', String(cur + lives));
+    document.getElementById('msg').innerHTML =
+      `Se agregaron <strong style="color:#c8ff57">+${lives} vida${lives>1?'s':''}</strong> a tu cuenta.<br>¡Seguí jugando!`;
+  }
+</script>
+</body>
+</html>
