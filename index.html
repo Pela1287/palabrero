@@ -841,31 +841,31 @@
     <div class="modal-sub">Te quedás sin vidas y el juego termina. Recargá para seguir jugando hoy.</div>
 
     <div class="lives-options">
-      <div class="lives-option" onclick="buyLives(1, 0.99)">
+      <div class="lives-option" onclick="buyLives(1)">
         <div class="lives-option-icon">♥</div>
         <div class="lives-option-info">
           <div class="lives-option-name">1 vida extra</div>
           <div class="lives-option-desc">Para seguir la partida de hoy</div>
         </div>
-        <div class="lives-option-price">$0.99</div>
+        <div class="lives-option-price">$990</div>
       </div>
 
-      <div class="lives-option featured" onclick="buyLives(5, 2.99)">
+      <div class="lives-option featured" onclick="buyLives(5)">
         <div class="lives-option-icon">♥♥</div>
         <div class="lives-option-info">
           <div class="lives-option-name">5 vidas <span class="featured-badge">POPULAR</span></div>
           <div class="lives-option-desc">El mejor precio por vida</div>
         </div>
-        <div class="lives-option-price">$2.99</div>
+        <div class="lives-option-price">$2.990</div>
       </div>
 
-      <div class="lives-option" onclick="buyLives(15, 5.99)">
+      <div class="lives-option" onclick="buyLives(15)">
         <div class="lives-option-icon">💛</div>
         <div class="lives-option-info">
           <div class="lives-option-name">15 vidas</div>
           <div class="lives-option-desc">Máximo ahorro — jugá sin límites</div>
         </div>
-        <div class="lives-option-price">$5.99</div>
+        <div class="lives-option-price">$5.990</div>
       </div>
     </div>
 
@@ -1798,12 +1798,12 @@ async function initMercadoPago(lives) {
   }
 }
 
-function buyLives(amount, price) {
+function buyLives(amount) {
   initMercadoPago(amount);
   closeModal('livesModal');
 }
 
-function buyLivesAndContinue(amount, price) {
+function buyLivesAndContinue(amount) {
   initMercadoPago(amount);
   closeModal('noLivesModal');
 }
@@ -1848,29 +1848,29 @@ function openNoLivesModal() {
     <div class="modal-sub" style="text-align:center">Te quedaste sin vidas. Comprá más para seguir jugando ahora mismo.</div>
 
     <div class="lives-options">
-      <div class="lives-option" onclick="buyLivesAndContinue(1, 0.99)">
+      <div class="lives-option" onclick="buyLivesAndContinue(1)">
         <div class="lives-option-icon">♥</div>
         <div class="lives-option-info">
           <div class="lives-option-name">1 vida extra</div>
           <div class="lives-option-desc">Seguí jugando ahora mismo</div>
         </div>
-        <div class="lives-option-price">$0.99</div>
+        <div class="lives-option-price">$990</div>
       </div>
-      <div class="lives-option featured" onclick="buyLivesAndContinue(5, 2.99)">
+      <div class="lives-option featured" onclick="buyLivesAndContinue(5)">
         <div class="lives-option-icon">♥♥</div>
         <div class="lives-option-info">
           <div class="lives-option-name">5 vidas <span class="featured-badge">POPULAR</span></div>
           <div class="lives-option-desc">El mejor precio por vida</div>
         </div>
-        <div class="lives-option-price">$2.99</div>
+        <div class="lives-option-price">$2.990</div>
       </div>
-      <div class="lives-option" onclick="buyLivesAndContinue(15, 5.99)">
+      <div class="lives-option" onclick="buyLivesAndContinue(15)">
         <div class="lives-option-icon">💛</div>
         <div class="lives-option-info">
           <div class="lives-option-name">15 vidas</div>
           <div class="lives-option-desc">Máximo ahorro — jugá sin límites</div>
         </div>
-        <div class="lives-option-price">$5.99</div>
+        <div class="lives-option-price">$5.990</div>
       </div>
     </div>
 

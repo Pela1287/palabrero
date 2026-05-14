@@ -6,11 +6,11 @@ export default async function handler(req, res) {
 
   const { lives } = req.body;
 
-  // Validar paquetes permitidos (precios en USD para Mercado Pago)
+  // Validar paquetes permitidos (precios en ARS para Mercado Pago Argentina)
   const PACKS = {
-    1:  { price: 0.99,  title: '1 vida extra — Palabrero' },
-    5:  { price: 2.99,  title: '5 vidas — Palabrero' },
-    15: { price: 5.99,  title: '15 vidas — Palabrero' },
+    1:  { price: 990,   title: '1 vida extra — Palabrero' },
+    5:  { price: 2990,  title: '5 vidas — Palabrero' },
+    15: { price: 5990,  title: '15 vidas — Palabrero' },
   };
 
   const pack = PACKS[lives];
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
           {
             title: pack.title,
             quantity: 1,
-            currency_id: 'USD',
+            currency_id: 'ARS',
             unit_price: pack.price,
           }
         ],
